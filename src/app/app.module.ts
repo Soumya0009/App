@@ -42,13 +42,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import{FormsModule} from'@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddemployeeComponent } from './addemployee/addemployee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutComponent,
-    HomeComponent
+    HomeComponent,
+    AddemployeeComponent
   ],
   imports: [
     BrowserModule,
