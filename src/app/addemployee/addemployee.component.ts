@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-addemployee',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent {
-
+  
 }
+
+

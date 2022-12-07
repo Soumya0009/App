@@ -43,6 +43,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import{FormsModule} from'@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { AdddepartmentComponent } from './adddepartment/adddepartment.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
     LoginComponent,
     LogoutComponent,
     HomeComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    AdddepartmentComponent
   ],
   imports: [
     BrowserModule,
