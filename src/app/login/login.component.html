@@ -1,16 +1,15 @@
-<div class="main_div">
-    <div class="box">
-        <h1>Login Form</h1>
-        <form action="#" method="" class="form">
-            <div class="inputBox">
-                <input type="text" name="username" autocomplete="off" required>
-                <label for="username">User Name</label>
-            </div>
-            <div class="inputBox">
-                <input type="text" name="password" autocomplete="off" required>
-                <label for="password">Password</label>
-            </div>
-            <input type="submit" name="" value="login">
-        </form>
-    </div>
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Login Page</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+              <input matInput placeholder="Username" [(ngModel)]="user" name="user">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" [(ngModel)]="pass" name="pass">
+              </mat-form-field>
+              <button mat-raised-button type="submit" (click)="login()">Login</button>
+          </form>
+    </mat-card>
 </div>

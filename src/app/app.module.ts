@@ -41,7 +41,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import{FormsModule} from'@angular/forms';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -88,7 +88,8 @@ import{FormsModule} from'@angular/forms';
     MatTabsModule,
     MatFormFieldModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
