@@ -44,6 +44,10 @@ import{FormsModule} from'@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AdddepartmentComponent } from './adddepartment/adddepartment.component';
+import { UserComponent } from './user/user.component';
+import { ActivityComponent } from './activity/activity.component';
+import { AddtaskComponent } from './addtask/addtask.component';
+import { AddcommentComponent } from './addcomment/addcomment.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { AdddepartmentComponent } from './adddepartment/adddepartment.component'
     LogoutComponent,
     HomeComponent,
     AddemployeeComponent,
-    AdddepartmentComponent
+    AdddepartmentComponent,
+    UserComponent,
+    ActivityComponent,
+    AddtaskComponent,
+    AddcommentComponent
   ],
   imports: [
     BrowserModule,
