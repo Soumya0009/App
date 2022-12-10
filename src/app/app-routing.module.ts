@@ -43,8 +43,7 @@ const routes: Routes = [
        {
         path:"addcomment",
         component:AddcommentComponent
-       },
-
+       }
     ]
   },
   {

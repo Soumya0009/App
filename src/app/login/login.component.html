@@ -1,15 +1,26 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-    <mat-card fxFlex="25">
-        <mat-toolbar color="primary">Login Page</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column">
-            <mat-form-field>
-              <input matInput placeholder="Username" [(ngModel)]="user" name="user">
-            </mat-form-field>
-          
-            <mat-form-field>
-                <input matInput type="password" placeholder="Password" [(ngModel)]="pass" name="pass">
-              </mat-form-field>
-              <button mat-raised-button type="submit" (click)="login()">Login</button>
-          </form>
-    </mat-card>
+  <mat-card fxFlex="25">
+    <mat-toolbar color="primary"><h1>Login</h1></mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="Username" [(ngModel)]="user" name="user" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="pass"
+          name="pass"
+        />
+      </mat-form-field>
+    </form>
+    <button mat-raised-button type="submit" color="primary" (click)="login()">
+      Login
+    </button>
+    <button mat-raised-button type="submit" routerLink="#">
+      Create account
+    </button>
+  </mat-card>
 </div>

@@ -1,35 +1,70 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <h4>Designed by Soumya</h4>
-      <button mat-button (click)="opened=!opened">Menu</button>
-      <button mat-button routerLink="/home">Home</button>
-        <button mat-button routerLink="/login">Log-out</button>
-       </mat-toolbar-row>
-  </mat-toolbar>
-  <mat-sidenav-container>
-      <mat-sidenav [(opened)]="opened" mode="side">
-          <mat-list>
-            <mat-list-item>
-                <button mat-button routerLink="addemployee">Add Employee</button>
-            </mat-list-item>
-            <mat-list-item>
-                <button mat-button routerLink="adddepartment">Add Department</button>
-            </mat-list-item>
-            <mat-list-item>
-                <button mat-button routerLink="user">Add User</button>
-            </mat-list-item>
-            <mat-list-item>
-                <button mat-button routerLink="addtask">Add Tasks</button>
-            </mat-list-item>
-            <mat-list-item>
-                <button mat-button routerLink="activity">Add Activity</button>
-            </mat-list-item>
-            <mat-list-item>
-                <button mat-button routerLink="addcomment">Add Comment</button>
-            </mat-list-item>
-          </mat-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-        <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Designed By Soumya
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+
+        <img src="../assets/User/New_user.png" class="avtar mat-elevation-z8">
+        <h4 class="name">User Name</h4>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="../home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="addemployee">
+            <mat-icon>group_add</mat-icon>
+            <span>Add Employee</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="adddepartment">
+            <mat-icon>business</mat-icon>
+            <span>Add Department</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="adddepartment">
+            <mat-icon>category</mat-icon>
+            <span id="manage-department">Manage Department</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="user">
+            <mat-icon>person_add</mat-icon>
+            <span>Add User</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="addtask">
+            <mat-icon>task</mat-icon>
+            <span>Add Tasks</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="activity">
+            <mat-icon>how_to_reg</mat-icon>
+            <span>Add Activity</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="addcomment">
+            <mat-icon> add_comment</mat-icon>
+            <span>Comment</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="../login">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>account_box</mat-icon>
+            <span>Create Account</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
