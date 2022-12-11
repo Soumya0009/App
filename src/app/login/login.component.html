@@ -1,26 +1,33 @@
-<div fxLayoutAlign="center center" fxFlexFill>
-  <mat-card fxFlex="25">
-    <mat-toolbar color="primary"><h1>Login</h1></mat-toolbar>
-    <form fxLayoutAlign="stretch" fxLayout="column">
-      <mat-form-field>
-        <input matInput placeholder="Username" [(ngModel)]="user" name="user" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <input
-          matInput
-          type="password"
-          placeholder="Password"
-          [(ngModel)]="pass"
-          name="pass"
-        />
-      </mat-form-field>
-    </form>
-    <button mat-raised-button type="submit" color="primary" (click)="login()">
-      Login
-    </button>
-    <button mat-raised-button type="submit" routerLink="#">
-      Create account
-    </button>
-  </mat-card>
-</div>
+<section class="Form my-4 mx-5">
+  <div class="container">
+    <div class="row no-guttors justify-content-center">
+      <div class="col-lg-5">
+        <img src="../assets/Lgbg/bg.jpg" alt="" class="img-fluid">
+      </div>
+        <div class="col-lg-7 px-5 pt-5">
+          <h1 class="font-weight-bold py-3">Logo</h1>
+          <h4>Sign into your account</h4>
+            <form>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" placeholder="User Name" class="form-control my-3 p-4" [(ngModel)]="user" name="user">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" placeholder="Password" class="form-control my-3 p-4" [(ngModel)]="pass" name="pass">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <button type="button" class="btn1 mt-3 mb-5" (click)="login()">Login</button>
+                </div>
+              </div>
+              <a routerLink="#">Forgot password?</a>
+              <p>Don't have an account? <a routerLink="#">Registe here</a></p>
+            </form>
+        </div>
+    
+      </div>
+  </div>
+</section>
