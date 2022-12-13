@@ -48,6 +48,7 @@ import { UserComponent } from './user/user.component';
 import { ActivityComponent } from './activity/activity.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddcommentComponent } from './addcomment/addcomment.component';
+import { ErrorcomeComponent } from './errorcome/errorcome.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
     UserComponent,
     ActivityComponent,
     AddtaskComponent,
-    AddcommentComponent
+    AddcommentComponent,
+    ErrorcomeComponent
   ],
   imports: [
     BrowserModule,

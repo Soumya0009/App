@@ -5,6 +5,7 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
 import { AdddepartmentComponent } from './adddepartment/adddepartment.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AddtaskComponent } from './addtask/addtask.component';
+import { ErrorcomeComponent } from './errorcome/errorcome.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -50,6 +51,10 @@ const routes: Routes = [
     path:"",
     redirectTo:'login',
     pathMatch:'full'
+  },
+  {
+    path:"**",
+    component:ErrorcomeComponent
   }
  
  
