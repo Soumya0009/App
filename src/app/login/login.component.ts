@@ -14,7 +14,6 @@ pass:any
   }
   login(){
     if(this.user=='user'&& this.pass=='123'){
-      alert("login sucessfull")
       this.route.navigate(['home'])
     }else{
       alert("login failed")

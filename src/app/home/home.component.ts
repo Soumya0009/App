@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
@@ -7,12 +7,14 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   @ViewChild(MatSidenav)
   sidenav!:MatSidenav;
 
   constructor(private observer:BreakpointObserver){
 
+  }
+  ngOnInit(){
   }
   ngAfterViewInit(){
     this.observer.observe(['(max-width: 800px)']).subscribe((res)=>{

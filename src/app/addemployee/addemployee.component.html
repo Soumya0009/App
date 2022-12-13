@@ -1,44 +1,77 @@
-<div class="card">
-<div class="container align-center">
-    <div class="row col-md-6 col-md-offset-3">
-        <div class="panel-primary">
-            <div class="panel-heading text-center"> 
-                <h1>Add Employee</h1>
-             </div>
-             <div class="panel-body">
-                <form>
-             <div class="form-group">
-                <label for="firstName">first Name</label>
-                <input type="text" class="form-control" id="firstName">
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="LastName">
-             </div>
-             <div class="form-group">
-                <label for="email">Gender</label>
-            <div>
-                <label for="male" class="radio-inline"> <input type="radio" name="gender" id="Male">Male</label>
-                <label for="female" class="radio-inline"> <input type="radio" name="gender" id="female">Female</label>
-                <label for="others" class="radio-inline"> <input type="radio" name="gender" id="Others">Others</label>
-           </div>
-           </div>
-             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="Email">
-            </div>
-            <div class="form-group">
-                <label for="Salary">Salary</label>
-                <input type="text" class="form-control" id="Salary">
-            </div>
-            <div class="form-group">
-                <label for="ContactNo.">ContactNo.</label>
-                <input type="text" class="form-control" id="ContactNo">
-            </div>
-            <br>
-             <button type="button" class="btn btn-outline-primary">Submit</button>
-            </form>
+<form [formGroup]="employeeForm" (ngSubmit)="registerSubmited()" 
+class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
+    <div class="row g-0 border-0">
+        <div class="col text-center p-3 mb-3">
+            <span class="fs-3">Add Employee</span>
         </div>
     </div>
-</div>
-</div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="First Name" formControlName="firstname">
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['required'] && FirstName.touched">
+                First Name is Required
+            </div>
+        </div>
+
+        <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="Middle Name" formControlName="middlename">
+            <div class="form-text"></div>
+        </div>
+
+        <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname">
+            <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && LastName.touched">
+                Last Name is Required
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <input type="email" class="form-control" placeholder="Email Id" formControlName="email">
+                <div class="form-text"></div>
+            </div>
+    
+            <div class="col mb-3">
+                <input type="text" class="form-control" placeholder="Mobile No" formControlName="mobile">
+                <div class="form-text"></div>
+            </div>
+        </div>
+
+        <div class="col ps-3 mb-3">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+                <label for="male" class="form-check-label">Male</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="o" id="others" formControlName="gender">
+                <label for="others" class="form-check-label">Others</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <input type="text" class="form-control" placeholder="Employee Id" formControlName="employeeid">
+                <div class="form-text"></div>
+            </div>
+    
+            <div class="col mb-3">
+                <input type="number" class="form-control" placeholder="Salery" formControlName="salery">
+                <div class="form-text"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-outline-dark">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
