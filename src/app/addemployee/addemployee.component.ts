@@ -9,27 +9,23 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddemployeeComponent {
   constructor(){}
+
   ngOnInit():void{
   }
   employeeForm = new FormGroup({
-    firstname: new FormControl("", [Validators.required]),
+    firstname: new FormControl(""),
     middlename: new FormControl(""),
-    lastname: new FormControl("",[Validators.required]),
+    lastname: new FormControl(""),
     email: new FormControl(""),
     mobile: new FormControl(""),
     gender: new FormControl(""),
     employeeid: new FormControl(""),
     salery: new FormControl(""),
   });
-  registerSubmited(){
-    console.log(this.employeeForm);
-  }
-  get FirstName(): FormControl{
-    return this.employeeForm.get("firstname") as FormControl;
-  }
-  get LastName(): FormControl{
-    return this.employeeForm.get("lastname") as FormControl;
-  }
+
+  registerSubmited() {
+   console.log(this.employeeForm);
+    }
  
 }
 

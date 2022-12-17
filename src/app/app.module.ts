@@ -49,6 +49,8 @@ import { ActivityComponent } from './activity/activity.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { AddcommentComponent } from './addcomment/addcomment.component';
 import { ErrorcomeComponent } from './errorcome/errorcome.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ApiserviceService } from './apiservice.service';
 
 @NgModule({
   declarations: [
@@ -104,9 +106,10 @@ import { ErrorcomeComponent } from './errorcome/errorcome.component';
     MatSidenavModule,
     FormsModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
