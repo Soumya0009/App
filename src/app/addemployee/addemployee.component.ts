@@ -1,6 +1,7 @@
 import { Component, } from '@angular/core';
 import { FormGroup, FormControl, Validators, RequiredValidator } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-addemployee',
@@ -8,23 +9,32 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent {
-  constructor(){}
-
+  // userForm!: FormGroup
+  constructor(private api:ApiserviceService){}
+  readUser:any;
   ngOnInit():void{
+    this.api.getAllUser().subscribe((res)=>{
+      console.log('Get all user Data',res);
+      this.readUser = res.data;
+    })
   }
   employeeForm = new FormGroup({
-    firstname: new FormControl(""),
-    middlename: new FormControl(""),
-    lastname: new FormControl(""),
-    email: new FormControl(""),
-    mobile: new FormControl(""),
-    gender: new FormControl(""),
-    employeeid: new FormControl(""),
-    salery: new FormControl(""),
+    'Mobile_No': new FormControl(""),
+    'First_Name': new FormControl(""),
+    'Middle_Name': new FormControl(""),
+    'Last_Name': new FormControl(""),
+    'Email': new FormControl(""),
+    'Salery': new FormControl(""),
+    'Gender': new FormControl("")
   });
 
   registerSubmited() {
-   console.log(this.employeeForm);
+   console.log(this.employeeForm.value);
+    this.api.createData(this.employeeForm.value).subscribe((res)=>{
+      console.log(res,'Data Added Sucessfully');
+      this.employeeForm.reset();
+      alert('Deta Added Sucseefully');
+    })
     }
  
 }

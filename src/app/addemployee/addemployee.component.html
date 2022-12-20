@@ -10,55 +10,50 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
 
     <div class="row">
         <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Employee Id" formControlName="employeeid">
+            <input type="text" class="form-control" placeholder="First Name" formControlName="First_Name">
+        </div>
+
+        <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="Middle Name" formControlName="Middle_Name">
             <div class="form-text"></div>
         </div>
 
         <div class="col mb-3">
-            <input type="number" class="form-control" placeholder="Salery" formControlName="salery">
-            <div class="form-text"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="First Name" formControlName="firstname">
-        </div>
-
-        <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Middle Name" formControlName="middlename">
-            <div class="form-text"></div>
-        </div>
-
-        <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="Last_Name">
         </div>
 
         <div class="row">
             <div class="col mb-3">
-                <input type="email" class="form-control" placeholder="Email Id" formControlName="email">
+                <input type="email" class="form-control" placeholder="Email Id" formControlName="Email">
                 <div class="form-text"></div>
             </div>
-    
+        </div>
+
+        <div class="row">
             <div class="col mb-3">
-                <input type="text" class="form-control" placeholder="Mobile No" formControlName="mobile">
+                <input type="text" class="form-control" placeholder="Mobile No" formControlName="Mobile_No">
+                <div class="form-text"></div>
+            </div>
+
+            <div class="col mb-3">
+                <input type="number" class="form-control" placeholder="Salery" formControlName="Salery">
                 <div class="form-text"></div>
             </div>
         </div>
 
         <div class="col ps-3 mb-3">
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+                <input type="radio" class="form-check-input" value="m" id="male" formControlName="Gender">
                 <label for="male" class="form-check-label">Male</label>
             </div>
 
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+                <input type="radio" class="form-check-input" value="f" id="female" formControlName="Gender">
                 <label for="female" class="form-check-label">Female</label>
             </div>
 
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="o" id="others" formControlName="gender">
+                <input type="radio" class="form-check-input" value="o" id="others" formControlName="Gender">
                 <label for="others" class="form-check-label">Others</label>
             </div>
         </div>
