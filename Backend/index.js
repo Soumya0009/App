@@ -24,7 +24,7 @@ db.connect(err => {
     console.log('Sucessfully connected with database!!!')
 })
 
-// Get all data
+// Show all data of employee
 app.get('/add_employee',(req,res)=>{
     // console.log("Get all elements");
     let qrr = `SELECT * FROM add_employee`;
@@ -41,7 +41,7 @@ app.get('/add_employee',(req,res)=>{
     });
 });
 
-// get single data by id
+// Show single data by id of employee
 // app.get('/add_employee/:id',(req,res)=>{
 //     // console.log(req.params.id);
 //     let qrId = req.params.id;
@@ -63,9 +63,10 @@ app.get('/add_employee',(req,res)=>{
 //     })
 // });
 
+
+// Create data of employee
 app.post('/add_employee',(req,res)=>{
     // console.log(req.body,'post data sucessfull');
-    let employeeId = req.body.Employee_ID;
     let firstName = req.body.First_Name;
     let middleName = req.body.Middle_Name;
     let lastName = req.body.Last_Name;
@@ -74,8 +75,8 @@ app.post('/add_employee',(req,res)=>{
     let gender = req.body.Gender;
     let salery = req.body.Salery;
 
-    let qr = `insert into add_employee(Employee_ID,First_Name,Middle_Name,Last_Name,Email,Mobile_No,Gender,Salery)
-    value('${employeeId}','${firstName}','${middleName}','${lastName}','${eMail}','${mobileNo}','${gender}','${salery}')`;
+    let qr = `insert into add_employee(First_Name,Middle_Name,Last_Name,Email,Mobile_No,Gender,Salery)
+    value('${firstName}','${middleName}','${lastName}','${eMail}','${mobileNo}','${gender}','${salery}')`;
     db.query(qr,(err,results)=>{
         if(err){console.log(err)}
             res.send({
