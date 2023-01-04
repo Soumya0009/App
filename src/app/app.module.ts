@@ -51,6 +51,7 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
 import { ErrorcomeComponent } from './errorcome/errorcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
+import { GetemployeeComponent } from './getemployee/getemployee.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ApiserviceService } from './apiservice.service';
     ActivityComponent,
     AddtaskComponent,
     AddcommentComponent,
-    ErrorcomeComponent
+    ErrorcomeComponent,
+    GetemployeeComponent
   ],
   imports: [
     BrowserModule,

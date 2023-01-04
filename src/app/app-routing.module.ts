@@ -6,6 +6,7 @@ import { AdddepartmentComponent } from './adddepartment/adddepartment.component'
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { ErrorcomeComponent } from './errorcome/errorcome.component';
+import { GetemployeeComponent } from './getemployee/getemployee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
     children:[
       {
         path:"addemployee",
+        component:AddemployeeComponent
+       },
+      {
+        path:"addemployee/:Employee_ID",
         component:AddemployeeComponent
        },
        {
@@ -44,7 +49,11 @@ const routes: Routes = [
        {
         path:"addcomment",
         component:AddcommentComponent
-       }
+       },
+         {
+            path:"getemployee",
+            component:GetemployeeComponent
+          }
     ]
   },
   {

@@ -1,0 +1,35 @@
+<div class="container mt-3 border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Middle Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Salery</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let ei of getUser">
+            <th scope="row">{{ei.Employee_ID}}</th>
+            <td>{{ei.First_Name}}</td>
+            <td>{{ei.Middle_Name}}</td>
+            <td>{{ei.Last_Name}}</td>
+            <td>{{ei.Email}}</td>
+            <td>{{ei.Mobile_No}}</td>
+            <td>{{ei.Salery}}</td>
+            <td>{{ei.Gender}}</td>
+            <td><button mat-raised-button class="menu-button" (click)="deleteId(ei.Employee_ID)">
+              <mat-icon color="warn"  >delete</mat-icon></button></td>
+            <td><button mat-raised-button class="menu-button" [routerLink]="['../addemployee',ei.Employee_ID]">
+              <mat-icon color="primary" >edit</mat-icon></button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

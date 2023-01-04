@@ -23,4 +23,19 @@ export class ApiserviceService {
     // console.log(data,'Soumya');
     return this.http.post(`${this.createUrl}`,data);
   }
+  //Delete Data
+  deleteData(Employee_ID:any):Observable<any>{
+    let ids = Employee_ID;
+    return this.http.delete(`${this.createUrl}/${ids}`);
+  }
+  // Update Data
+  updateData(data:any,Employee_ID:any):Observable<any>{
+    let ids = Employee_ID;
+    return this.http.post(`${this.createUrl}/${ids}`,data)
+  }
+  //Get Single Data
+  getSingleData(Employee_ID:any):Observable<any>{
+    let ids = Employee_ID;
+    return this.http.get(`${this.createUrl}/${ids}`);
+  }
 }

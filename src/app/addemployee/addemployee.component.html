@@ -1,10 +1,12 @@
 <!-- Bootstrap-5 is used in this page -->
 <div >
-<form [formGroup]="employeeForm" (ngSubmit)="registerSubmited()" 
+<form [formGroup]="employeeForm"
 class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
-    <div class="row g-0 border-0">
-        <div class="col text-center p-3 mb-3">
-            <span class="fs-3">Add Employee</span>
+
+    <div class="row">
+        <div class="col mb-3">
+            <h1>Add Employee</h1>
+            <hr>
         </div>
     </div>
 
@@ -60,9 +62,21 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
     </div>
 
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-3 offset-0">
             <div class="d-grid">
-                <button type="submit" class="btn btn-outline-dark">Submit</button>
+                <button type="submit" class="btn btn-outline-dark" *ngIf="!getparamid" (click)="registerSubmited()">Submit</button>
+            </div>
+        </div>
+
+        <div class="col-3 offset-0">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-outline-success" *ngIf="getparamid" (click)=" registerUpdated()">Update</button>
+            </div>
+        </div>
+
+        <div class="col-6 offset-0">
+            <div class="d-grid">
+                <button type="button" class="btn btn-outline-info" routerLink="../getemployee">Get Employee</button>
             </div>
         </div>
     </div>
