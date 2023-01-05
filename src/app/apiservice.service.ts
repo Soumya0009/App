@@ -13,6 +13,8 @@ export class ApiserviceService {
   departmentUrl = "http://localhost:3000/add_department";
   createUrl = "http://localhost:3000/add_employee";
   DepartmentUrl = "http://localhost:3000/add_department";
+  taskurl="http://localhost:3000/tbl_task";
+
   constructor(private http:HttpClient) { }
 
   // Get all data Observe..
@@ -22,6 +24,10 @@ export class ApiserviceService {
   //Get department data
   getDepartmentData():Observable<any>{
     return this.http.get(`${this.departmentUrl}`);
+  }
+  //Get task data
+  gettaskdata():Observable<any>{
+    return this.http.get(`${this.taskurl}`);
   }
 
   // Create Data
