@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     user:'root',
     password:'',
     database:'app',
-    port:3335//3306
+    port:3306
 });
 
 
