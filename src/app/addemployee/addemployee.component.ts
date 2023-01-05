@@ -28,10 +28,10 @@ export class AddemployeeComponent {
         Last_Name:res.data[0].Last_Name,
         Email:res.data[0].Email,
         Salery:res.data[0].Salery,
-        Gender:res.data[0].Gender
-      })
-
-    })
+        Gender:res.data[0].Gender,
+        Status:res.data[0].Gender,
+      });
+    });
   }
   serchText:any;
   employeeForm = new FormGroup({
@@ -41,7 +41,8 @@ export class AddemployeeComponent {
     'Last_Name': new FormControl(""),
     'Email': new FormControl(""),
     'Salery': new FormControl(""),
-    'Gender': new FormControl("")
+    'Gender': new FormControl(""),
+    'Status': new FormControl("")
   });
 
   registerSubmited() {
@@ -59,7 +60,7 @@ export class AddemployeeComponent {
         this.api.updateData(this.employeeForm.value,this.getparamid).subscribe((res)=>{
           console.log(res,'Data Updated Sucessfully.');
           this.employeeForm.reset();
-          alert('Deta Updatedd Sucseefully');
+          alert('Deta Updated Sucseefully');
         })
       }else{
         this.errMsg = 'All fildes are required.'

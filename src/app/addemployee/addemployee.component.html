@@ -5,7 +5,7 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
 
     <div class="row">
         <div class="col mb-3">
-            <h1>Add Employee</h1>
+            <h5>Add Employee</h5>
             <hr>
         </div>
     </div>
@@ -44,6 +44,9 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
         </div>
 
         <div class="col ps-3 mb-3">
+
+            <div class="form-check form-check-inline"><b>(Gender)</b></div>
+
             <div class="form-check form-check-inline">
                 <input type="radio" class="form-check-input" value="m" id="male" formControlName="Gender">
                 <label for="male" class="form-check-label">Male</label>
@@ -61,6 +64,22 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
         </div>
     </div>
 
+    <div class="col ps-3 mb-3">
+
+        <div class="form-check form-check-inline"><b>(Status)</b></div>
+
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="0" id="true" formControlName="Status">
+            <label for="true" class="form-check-label">True</label>
+        </div>
+    
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="1" id="false" formControlName="Status">
+            <label for="false" class="form-check-label">False</label>
+        </div>
+    
+    </div>
+    
     <div class="row">
         <div class="col-3 offset-0">
             <div class="d-grid">
@@ -76,7 +95,7 @@ class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
 
         <div class="col-6 offset-0">
             <div class="d-grid">
-                <button type="button" class="btn btn-outline-info" routerLink="../getemployee">Get Employee</button>
+                <button type="button" class="btn btn-outline-info" *ngIf="!getparamid" routerLink="../getemployee">Get Employee</button>
             </div>
         </div>
     </div>
