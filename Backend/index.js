@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     user:'root',
     password:'',
     database:'app',
-    port:3306//3335
+    port:3335//3306
 });
 
 
@@ -24,7 +24,7 @@ db.connect(err => {
     console.log('Sucessfully connected with database!!!')
 })
 
-// Show all data of employee
+// Show/get all data of employee
 app.get('/add_employee',(req,res)=>{
     // console.log("Get all elements");
     let qrr = `SELECT * FROM add_employee`;
@@ -41,7 +41,7 @@ app.get('/add_employee',(req,res)=>{
     });
 });
 
-// Show single data by id of employee
+// Show/get single data by id of employee
 app.get('/add_employee/:Employee_ID',(req,res)=>{
     // console.log("Get all elements");
     let qrId = req.params.Employee_ID;
@@ -63,8 +63,48 @@ app.get('/add_employee/:Employee_ID',(req,res)=>{
     });
 });
 
+//show/get all data of department table
+app.get('/add_department',(req,res)=>{
+    //console.log("Get all elements");
+    let rrr=`SELECT * FROM add_department`;
+    db.query(rrr,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message:'All data of department',
+                data:results
+            });
+        }
+    });
+});
 
-// Create data of employee
+//show/get single data by id of department
+app.get('/add_department/:id',(req,res)=>{
+    //console.log(req.params.id);
+    let qrId=req.params.id;
+    let qr=`SELECT * FROM add_department where id =${qrId}`;
+    db.query(qr,(err,results)=>{
+        if(err){
+            console.log(err,'Error');
+        }
+        if(results.length > 0){
+            res.send({
+                message:'Get data by ID',
+                data:results
+
+            });
+
+        }else{
+            res.send({
+                message:'Data not Found!!'
+            })
+        }
+    })
+})
+
+// Create/post data of employee
 app.post('/add_employee',(req,res)=>{
     // console.log(req.body,'post data sucessfull');
     let firstName = req.body.First_Name;
@@ -85,6 +125,22 @@ app.post('/add_employee',(req,res)=>{
             });
     });
 });
+//create/post data of department
+app.post('/add_department',(req,res)=>{
+    //console.log(req.body,'post data sucessfull');
+    let departmentName=req.body.Department_Name;
+    let status=req.body.Status;
+ 
+    let rr = `insert into add_department(Department_Name,Status)
+     value('${departmentName}','${status}')`;
+     db.query(rr,(err,results)=>{
+        if(err){console.log(err)}
+            res.send({
+             message:"Data Created Succeesfully",
+             data:results
+            });
+     });    
+ });
 
 // Update Data
 app.post('/add_employee/:Employee_ID',(req,res)=>{

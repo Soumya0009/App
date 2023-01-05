@@ -10,12 +10,18 @@ export class ApiserviceService {
   //   throw new Error('Method not implemented.');
   // }
   apiUrl = "http://localhost:3000/add_employee";
+  departmentUrl = "http://localhost:3000/add_department";
   createUrl = "http://localhost:3000/add_employee";
+  DepartmentUrl = "http://localhost:3000/add_department";
   constructor(private http:HttpClient) { }
 
   // Get all data Observe..
   getAllUser():Observable<any>{
     return this.http.get(`${this.apiUrl}`);
+  }
+  //Get department data
+  getDepartmentData():Observable<any>{
+    return this.http.get(`${this.departmentUrl}`);
   }
 
   // Create Data
