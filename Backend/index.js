@@ -104,6 +104,48 @@ app.get('/add_department/:id',(req,res)=>{
     })
 })
 
+// Show/get all data of task
+app.get('/tbl_task',(req,res)=>{
+    // console.log("Get all elements");
+    let sss = `SELECT * FROM tbl_task`;
+    db.query(sss,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data ',
+                data:results
+            });
+        }
+    });
+});
+
+
+//show/get single data by id of task
+app.get('/tbl_task/:id',(req,res)=>{
+    //console.log(req.params.id);
+    let qrId=req.params.id;
+    let qr=`SELECT * FROM tbl_task where id =${qrId}`;
+    db.query(qr,(err,results)=>{
+        if(err){
+            console.log(err,'Error');
+        }
+        if(results.length > 0){
+            res.send({
+                message:'Get data by ID',
+                data:results
+
+            });
+
+        }else{
+            res.send({
+                message:'Data not Found!!'
+            })
+        }
+    })
+})
+
 // Create/post data of employee
 app.post('/add_employee',(req,res)=>{
     // console.log(req.body,'post data sucessfull');
@@ -125,6 +167,7 @@ app.post('/add_employee',(req,res)=>{
             });
     });
 });
+
 //create/post data of department
 app.post('/add_department',(req,res)=>{
     //console.log(req.body,'post data sucessfull');
@@ -134,6 +177,25 @@ app.post('/add_department',(req,res)=>{
     let rr = `insert into add_department(Department_Name,Status)
      value('${departmentName}','${status}')`;
      db.query(rr,(err,results)=>{
+        if(err){console.log(err)}
+            res.send({
+             message:"Data Created Succeesfully",
+             data:results
+            });
+     });    
+ });
+
+ //Create/Post data of Task
+app.post('/tbl_task',(req,res)=>{
+    //console.log(req.body,'post data sucessfull');
+    let Name =req.body.Name;
+    let Description=req.body.Description;
+    let Department_ID=req.body.Department_ID;
+    let Status=req.body.Status;
+ 
+    let ss = `insert into tbl_task(Name,Description,Department_ID,Status)
+     value('${Name}','${Description}','${Department_ID}','${Status}')`;
+     db.query(ss,(err,results)=>{
         if(err){console.log(err)}
             res.send({
              message:"Data Created Succeesfully",
