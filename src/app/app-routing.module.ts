@@ -10,6 +10,7 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { AssignedTaskComponent } from './assigned-task/assigned-task.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path:"addtask",
         component:AddtaskComponent
+       },
+      {
+        path:"assigned-task",
+        component:AssignedTaskComponent
        },
        {
         path:"activity",

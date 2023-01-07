@@ -40,7 +40,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
-import{FormsModule, ReactiveFormsModule} from'@angular/forms';
+import {FormsModule, ReactiveFormsModule} from'@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AdddepartmentComponent } from './adddepartment/adddepartment.component';
@@ -52,6 +52,7 @@ import { ErrorcomeComponent } from './errorcome/errorcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
 import { GetemployeeComponent } from './getemployee/getemployee.component';
+import { AssignedTaskComponent } from './assigned-task/assigned-task.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
     AddtaskComponent,
     AddcommentComponent,
     ErrorcomeComponent,
-    GetemployeeComponent
+    GetemployeeComponent,
+    AssignedTaskComponent
   ],
   imports: [
     BrowserModule,

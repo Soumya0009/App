@@ -40,6 +40,22 @@ app.get('/add_employee',(req,res)=>{
         }
     });
 });
+// Show/get all data of User
+app.get('/user',(req,res)=>{
+    // console.log("Get all elements");
+    let qrr = `SELECT * FROM user`;
+    db.query(qrr,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data of User',
+                data:results
+            });
+        }
+    });
+});
 
 // Show/get single data by id of employee
 app.get('/add_employee/:Employee_ID',(req,res)=>{
@@ -53,6 +69,27 @@ app.get('/add_employee/:Employee_ID',(req,res)=>{
         if(results.length>0){
             res.send({
                 message: 'All data of employees',
+                data:results
+            });
+        }else{
+            res.send({
+                message:"Data Not Found!!!"
+            });
+        }
+    });
+});
+//Get Single Data Of User
+app.get('/user/:Id',(req,res)=>{
+    // console.log("Get all elements");
+    let qrId = req.params.Id;
+    let qr = `SELECT * FROM user where Id = ${qrId}`;
+    db.query(qr,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data of User',
                 data:results
             });
         }else{
@@ -168,6 +205,26 @@ app.post('/add_employee',(req,res)=>{
     });
 });
 
+// Create/post data of User
+app.post('/user',(req,res)=>{
+    // console.log(req.body,'post data sucessfull');
+    let employeeId = req.body.Employee_Id;
+    let pass = req.body.Password;
+    let createdOn = req.body.Created_On;
+    let modifiedOn = req.body.Modified_On;
+    let status = req.body.Status;
+
+    let qr = `insert into user(Employee_Id,Password,Created_On,Modified_On,Status)
+    value('${employeeId }','${pass}','${createdOn}','${modifiedOn}','${status}')`;
+    db.query(qr,(err,results)=>{
+        if(err){console.log(err)}
+            res.send({
+                message:"Data Created Sucessfully",
+                data:results
+            });
+    });
+});
+
 //create/post data of department
 app.post('/add_department',(req,res)=>{
     //console.log(req.body,'post data sucessfull');
@@ -204,7 +261,7 @@ app.post('/tbl_task',(req,res)=>{
      });    
  });
 
-// Update Data
+// Update Employee Data 
 app.post('/add_employee/:Employee_ID',(req,res)=>{
 
     let uId = req.params.Employee_ID;
@@ -225,8 +282,26 @@ app.post('/add_employee/:Employee_ID',(req,res)=>{
         });
     });
 });
+// Update User Data 
+app.post('/user/:Id',(req,res)=>{
+    let userId = req.params.Id;
+    let employeeId = req.body.Employee_Id;
+    let pass = req.body.Password;
+    let createdOn = req.body.Created_On;
+    let modifiedOn = req.body.Modified_On;
+    let status = req.body.Status;
 
-// delete data
+    let qr = `UPDATE user set Employee_Id = '${employeeId }', Password='${pass}', Created_On='${createdOn}', Modified_On='${modifiedOn}', Status='${status}' where Id = '${userId}'`;
+    db.query(qr,(err, results)=>{
+        if(err){console.log(err)}
+        res.send({
+            message:'Data Updated Sucesessfully',
+            data:results
+        });
+    });
+});
+
+// delete employee data
     app.delete('/add_employee/:Employee_ID',(req,res)=>{
         let uID = req.params.Employee_ID;
         let qr = `delete from add_employee where Employee_ID = '${uID}'`;
