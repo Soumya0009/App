@@ -1,52 +1,51 @@
-<div >
-    <form class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
-       <div class="row">
-        <div placeholder="Employee Name">
-           <select class="form-control col mb-2">
-            <option *ngFor="let tsk of readTasks">
-                {{tsk.Name}}
+<div>
+  <form class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
+    <div class="row">
+      <div placeholder="Employee Name">
+        <select class="form-control col mb-2">
+          <option *ngFor="let tsk of readTasks">
+            {{ tsk.Name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="col mb-2">
+        <div>
+          <select class="form-control col mb-2">
+            <option *ngFor="let tsk of readUser">
+              {{ tsk.Department_Name }}
             </option>
-           </select>
-        </div>
-  
-          <div class="col mb-2">
-            <div >
-                <select class="form-control col mb-2">
-                 <option *ngFor="let tsk of readUser">
-                    {{tsk.Department_Name}}
-                 </option>
-                </select>
-             </div>
-          </div>
-  
-          <div class="col mb-2">
-            <div >
-                <select class="form-control col mb-2" >
-                 <option *ngFor="let tsk of readTasks">
-                    {{tsk.Task_Name}}
-                 </option>
-                </select>
-             </div>
+          </select>
         </div>
       </div>
-  
-      <div class="clo mb-2">
-        <div >
-            <select class="form-control col mb-2" >
-             <option *ngFor="let tsk of readTasks">
-                {{tsk.Description}}
-             </option>
-            </select>
-         </div>
+
+      <div class="col mb-2">
+        <div>
+          <select class="form-control col mb-2">
+            <option *ngFor="let tsk of readTasks">
+              {{ tsk.Task_Name }}
+            </option>
+          </select>
+        </div>
       </div>
-  
-      <div class="row">
-          <div class="col-6 offset-3">
-              <div class="d-grid">
-                  <button type="submit" class="btn btn-outline-dark">Submit</button>
-              </div>
-          </div>
+    </div>
+
+    <div class="clo mb-2">
+      <div>
+        <select class="form-control col mb-2">
+          <option *ngFor="let tsk of readTasks">
+            {{ tsk.Description }}
+          </option>
+        </select>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+          <button type="submit" class="btn btn-outline-dark">Submit</button>
+        </div>
+      </div>
+    </div>
   </form>
-  </div>
-  
+</div>
