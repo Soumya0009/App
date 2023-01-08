@@ -1,53 +1,59 @@
 <div class="card text-center">
-  <div class="card-header">
-    <h2 class="card-title">User Login</h2>
-  </div>
+
   <div class="card-body">
         <form class="row g-2">
           <div class="col-auto">
-            <label for="inputId" class="visually-hidden">Id</label>
-            <input type="text" class="form-control" id="inputId" placeholder="Enter Id">
-          </div>
+            <label for="inputId" class="visually-hidden">ID</label>
+            <input type="text" class="form-control" id="inputId" placeholder="ID">
+          </div> 
 
           <div class="col-auto">
             <label for="inputId" class="visually-hidden">User Name</label>
-            <input type="username" class="form-control" id="inputId" placeholder="Enter User Name">
+            <input type="text" class="form-control" id="inputId" placeholder="User Name">
           </div>
+          
           <div class="col-auto">
             <label for="inputId" class="visually-hidden">Password</label>
-            <input type="password" class="form-control" id="inputId" placeholder="Enter Password">
+            <input type="text" class="form-control" id="inputId" placeholder="Password">
           </div>
 
           <div class="col-auto">
-            <label for="inputId" class="visually-hidden">First Name</label>
-            <input type="text" class="form-control" id="inputId" placeholder="Enter First Name">
+            <label for="inputId" class="visually-hidden">CreatedOn</label>
+            <input type="text" class="form-control" id="inputId" placeholder="CreatedOn">
           </div>
 
           <div class="col-auto">
-            <label for="inputId" class="visually-hidden">Midile Name</label>
-            <input type="text" class="form-control" id="inputId" placeholder="Enter Midile Name">
+            <label for="inputId" class="visually-hidden"></label>
+            <input type="text" class="form-control" id="inputId" placeholder="ModifiedOn">
           </div>
 
           <div class="col-auto">
-            <label for="inputId" class="visually-hidden">Last Name</label>
-            <input type="text" class="form-control" id="inputId" placeholder="Enter Last Name">
-          </div>
+            <label for="inputId" class="visually-hidden"></label>
+            <input type="text" class="form-control" id="inputId" placeholder="EmployeeID">
+          </div> <br> <br>
 
-          <div class="col-auto">
-            <label for="inputId" class="visually-hidden">Id</label>
-            <input type="email" class="form-control" id="inputId" placeholder="Enter Email Id @ ">
+          <div class="col ps-2 mb-3">
+
+            <div class="form-check form-check-inline"><b>(Status)</b></div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="0" id="true" formControlName="Status">
+                <label for="true" class="form-check-label">True</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="1" id="false" formControlName="Status">
+                <label for="false" class="form-check-label">False</label>
+            </div>
+        </div>   
+
+        <div class="row">
+          <div class="col-6 offset-3">
+            <div class="d-grid">
+              <button type="button" class="btn btn-outline-dark">Submit</button>
+            </div> 
           </div>
-          <div class="col-auto">
-            <label for="male" class="radio-inline"> <input type="radio" name="gender" id="Male">Male</label>
-            <label for="female" class="radio-inline"> <input type="radio" name="gender" id="female">Female</label>
-            <label for="others" class="radio-inline"> <input type="radio" name="gender" id="Others">Others</label>
-       </div>
-       <div class="">
-        <label for="inputId" class="visually-hidden">Id</label>
-        <input type="text" class="form-control" id="inputId" placeholder="Enter Date of birth">
-      </div>
+        </div>
     </form>
-    <br>
-    <button type="button" class="btn btn-outline-primary">Submit</button>
-  </div>
-</div>
+
+ 

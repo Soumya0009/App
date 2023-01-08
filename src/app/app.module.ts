@@ -52,6 +52,8 @@ import { ErrorcomeComponent } from './errorcome/errorcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
 import { GetemployeeComponent } from './getemployee/getemployee.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { LogincredentialsComponent } from './logincredentials/logincredentials.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
     AddtaskComponent,
     AddcommentComponent,
     ErrorcomeComponent,
-    GetemployeeComponent
+    GetemployeeComponent,
+    LogincredentialsComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +112,8 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
     FormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

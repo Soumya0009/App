@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-getemployee',
   templateUrl: './getemployee.component.html',
@@ -8,16 +9,18 @@ import { ApiserviceService } from '../apiservice.service';
 export class GetemployeeComponent {
   readUser: any;
 
-  constructor(private api:ApiserviceService){}
+  constructor(private api:ApiserviceService, private auth: AuthService){}
+
   getUser:any;
   ngOnInit():void{
     this.getAlldata();
+   
   }
 
   //Delete Id
   deleteId(Employee_ID:any){
     // console.log(Employee_ID,"Selected Id");
-    if(confirm('Are You Sure to delete the Record?'))
+    if(confirm('Are You Sureyou want to delete the Record?'))
     this.api.deleteData(Employee_ID).subscribe((res)=>{
       console.log(res,'Deleted Id No');
 
@@ -33,4 +36,5 @@ export class GetemployeeComponent {
       this.getUser = res.data;
     });
   }
+ 
 }

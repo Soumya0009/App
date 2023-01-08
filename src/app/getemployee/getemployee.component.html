@@ -1,4 +1,4 @@
-<div class="container mt-3 border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
+<div class="container mt-7 border-2 p-4 rounded-3 shadow-lg p-3 mb-5 bg-body">
     <table class="table table-bordered">
         <thead>
           <tr>
@@ -32,4 +32,6 @@
           </tr>
         </tbody>
       </table>
+      <mat-paginator #paginator [length]="100" [pageSizeOptions]="[3,5,10]" aria-label="select page">
+      </mat-paginator>
 </div>

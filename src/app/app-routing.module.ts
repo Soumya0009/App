@@ -10,6 +10,7 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { LogincredentialsComponent } from './logincredentials/logincredentials.component';
 
 const routes: Routes = [
 
@@ -50,9 +51,13 @@ const routes: Routes = [
         path:"addcomment",
         component:AddcommentComponent
        },
+       {
+          path:"getemployee",
+          component:GetemployeeComponent
+         },
          {
-            path:"getemployee",
-            component:GetemployeeComponent
+          path:"logincredentials",
+          component:LogincredentialsComponent
           }
     ]
   },
@@ -64,10 +69,7 @@ const routes: Routes = [
   {
     path:"**",
     component:ErrorcomeComponent
-  }
- 
- 
-  
+  } 
 ];
 
 @NgModule({

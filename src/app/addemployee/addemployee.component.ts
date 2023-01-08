@@ -10,6 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent {
+
   // userForm!: FormGroup
   constructor(private api:ApiserviceService, private router:ActivatedRoute){}
   readUser:any;

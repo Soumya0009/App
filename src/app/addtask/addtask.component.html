@@ -1,32 +1,49 @@
 <div >
-  <form class="border border-2 p-3 rounded-3 shadow-lg p-3 mb-5 bg-body">
+  <form class="border border-1 p-3 rounded-2 shadow-lg p-3 mb-5 bg-body">
      <div class="row">
       <div class="col mb-3">
-          <input type="text" class="form-control" placeholder="Employee Name">
+          <input type="text" class="form-control" placeholder="ID">
           <div class="form-text"></div>
       </div>
 
         <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Department Name">
+            <input type="text" class="form-control" placeholder="Name">
             <div class="form-text"></div>
         </div>
 
         <div class="col mb-3">
-          <input type="text" class="form-control" placeholder="Task Name">
+          <input type="text" class="form-control" placeholder="Department ID">
           <div class="form-text"></div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col mb-3">
-          <textarea class="form-control"></textarea>
+      <div class="col mb-4">
+          <input type="text" class="form-control" placeholder="Description">
+          <div class="form-text"></div>
       </div>
   </div>
+
+  <div class="col ps-3 mb-3">
+
+    <div class="form-check form-check-inline"><b>(Status)</b></div>
+
+    <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" value="0" id="true" formControlName="Status">
+        <label for="true" class="form-check-label">True</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" value="1" id="false" formControlName="Status">
+        <label for="false" class="form-check-label">False</label>
+    </div>
+
+</div>
 
     <div class="row">
         <div class="col-6 offset-3">
             <div class="d-grid">
-                <button type="submit" class="btn btn-outline-dark">Submit</button>
+                <button type="button" class="btn btn-outline-dark">Submit</button>
             </div>
         </div>
     </div>
