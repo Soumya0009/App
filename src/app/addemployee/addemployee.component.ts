@@ -17,6 +17,7 @@ export class AddemployeeComponent {
   errMsg:any;
   sucessMsg:any;
   getparamid:any;
+  Model:any
   ngOnInit():void{
     this.getparamid = this.router.snapshot.paramMap.get('Employee_ID');
     this.api.getSingleData(this.getparamid).subscribe((res)=>{
@@ -30,7 +31,7 @@ export class AddemployeeComponent {
         Email:res.data[0].Email,
         Salery:res.data[0].Salery,
         Gender:res.data[0].Gender,
-        Status:res.data[0].Gender,
+        Status:res.data[0].Gender
       });
     });
   }

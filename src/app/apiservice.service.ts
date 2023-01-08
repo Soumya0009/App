@@ -10,10 +10,11 @@ export class ApiserviceService {
   //   throw new Error('Method not implemented.');
   // }
   apiUrl = "http://localhost:3000/add_employee";
-  departmentUrl = "http://localhost:3000/add_department";
   createUrl = "http://localhost:3000/add_employee";
+  departmentUrl = "http://localhost:3000/add_department";
   DepartmentUrl = "http://localhost:3000/add_department";
   taskurl="http://localhost:3000/tbl_task";
+  userUrl="http://localhost:3000/user";
 
   constructor(private http:HttpClient) { }
 
@@ -28,6 +29,10 @@ export class ApiserviceService {
   //Get task data
   gettaskdata():Observable<any>{
     return this.http.get(`${this.taskurl}`);
+  }
+  //Get task data
+  getUserData():Observable<any>{
+    return this.http.get(`${this.userUrl}`);
   }
 
   // Create Data
