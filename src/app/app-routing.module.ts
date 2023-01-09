@@ -10,14 +10,10 @@ import { GetemployeeComponent } from './getemployee/getemployee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
-<<<<<<< HEAD
 import { LogincredentialsComponent } from './logincredentials/logincredentials.component';
-=======
 import { AssignedTaskComponent } from './assigned-task/assigned-task.component';
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
 
 const routes: Routes = [
-
   
   {
     path:"login",

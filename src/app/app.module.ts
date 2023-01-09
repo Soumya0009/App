@@ -52,12 +52,9 @@ import { ErrorcomeComponent } from './errorcome/errorcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
 import { GetemployeeComponent } from './getemployee/getemployee.component';
-<<<<<<< HEAD
 import {NgxPaginationModule} from 'ngx-pagination';
 import { LogincredentialsComponent } from './logincredentials/logincredentials.component';
-=======
 import { AssignedTaskComponent } from './assigned-task/assigned-task.component';
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
 
 @NgModule({
   declarations: [
@@ -73,11 +70,8 @@ import { AssignedTaskComponent } from './assigned-task/assigned-task.component';
     AddcommentComponent,
     ErrorcomeComponent,
     GetemployeeComponent,
-<<<<<<< HEAD
-    LogincredentialsComponent
-=======
+    LogincredentialsComponent,
     AssignedTaskComponent
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
   ],
   imports: [
     BrowserModule,

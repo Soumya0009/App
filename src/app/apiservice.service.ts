@@ -15,6 +15,8 @@ export class ApiserviceService {
   DepartmentUrl = "http://localhost:3000/add_department";
   taskurl="http://localhost:3000/tbl_task";
   userUrl="http://localhost:3000/user";
+  loginurl="http://localhost:3000/login_credentials";
+  lcUrl="http://localhost:3000/login_credentials";
 
   constructor(private http:HttpClient) { }
 
@@ -34,12 +36,21 @@ export class ApiserviceService {
   getUserData():Observable<any>{
     return this.http.get(`${this.userUrl}`);
   }
-
-  // Create Data
-  createData(data:any):Observable<any>{
+  //Get login credentials
+  getlogincredentialsForm():Observable<any>{
+  return this.http.get(`${this.loginurl}`);
+  }
+  // Create logincredentials Data
+  createlogincredentialsdata(data:any):Observable<any>{
+    // console.log(data,'Soumya');
+    return this.http.post(`${this.lcUrl}`,data);
+  }
+   // Create Data
+   createData(data:any):Observable<any>{
     // console.log(data,'Soumya');
     return this.http.post(`${this.createUrl}`,data);
   }
+
   //Delete Data
   deleteData(Employee_ID:any):Observable<any>{
     let ids = Employee_ID;

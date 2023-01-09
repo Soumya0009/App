@@ -1,153 +1,139 @@
 <!-- Bootstrap-5 is used in this page -->
 <div >
-<form [formGroup]="employeeForm"
-class="border border-2 p-2 rounded-3 shadow-lg p-2 mb-5 bg-body">
-
-    <div class="row">
-        <div class="col mb-2">
-            <h5>Add Employee</h5>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col mb-2">
-            <input type="text" class="form-control" placeholder="First Name" formControlName="First_Name">
-        </div>
-
-        <div class="col mb-2">
-            <input type="text" class="form-control" placeholder="Middle Name" formControlName="Middle_Name">
-            <div class="form-text"></div>
-        </div>
-
-        <div class="col mb-2">
-            <input type="text" class="form-control" placeholder="Last Name" formControlName="Last_Name">
-        </div>
-
+    <form [formGroup]="employeeForm"
+    class="border border-2 p-2 rounded-3 shadow-lg p-2 mb-5 bg-body">
+    
         <div class="row">
             <div class="col mb-2">
-                <input type="email" class="form-control" placeholder="Email Id" formControlName="Email">
-                <div class="form-text"></div>
+                <h5>Add Employee</h5>
+                <hr>
             </div>
         </div>
-
+    
         <div class="row">
             <div class="col mb-2">
-                <input type="text" class="form-control" placeholder="Mobile No" formControlName="Mobile_No">
-                <div class="form-text"></div>
+                <input type="text" class="form-control" placeholder="First Name" formControlName="First_Name">
             </div>
-
+    
             <div class="col mb-2">
-                <input type="number" class="form-control" placeholder="Salery" formControlName="Salery">
-                <div class="form-text"></div>
+                <input type="text" class="form-control" placeholder="Middle Name" formControlName="Middle_Name">
+                
+            </div>
+    
+            <div class="col mb-2">
+                <input type="text" class="form-control" placeholder="Last Name" formControlName="Last_Name">
+            </div>
+    
+            <div class="row">
+                <div class="col mb-2">
+                    <input type="email" class="form-control" placeholder="Email Id" formControlName="Email">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col mb-2">
+                    <input type="text" class="form-control" placeholder="Mobile No" formControlName="Mobile_No">
+                
+                </div>
+    
+                <div class="col mb-2">
+                    <input type="number" class="form-control" placeholder="Salary" formControlName="Salery">
+                    <div class="form-text"></div>
+                </div>
+            </div>
+    
+            <div class="col ps-2 mb-2">
+    
+                <div class="form-check form-check-inline"><b>(Gender)</b></div>
+    
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" value="m" id="male" formControlName="Gender">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+    
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" value="f" id="female" formControlName="Gender">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+    
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" value="o" id="others" formControlName="Gender">
+                    <label for="others" class="form-check-label">Others</label>
+                </div>
             </div>
         </div>
-
-<<<<<<< HEAD
-       
-    </div>
-          <div class="col ps-3 mb-3">
-=======
+    
         <div class="col ps-2 mb-2">
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
-
-            <div class="form-check form-check-inline"><b>(Gender)</b></div>
-
+    
+            <div class="form-check form-check-inline"><b>(Status)</b></div>
+    
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="m" id="male" formControlName="Gender">
-                <label for="male" class="form-check-label">Male</label>
+                <input type="radio" class="form-check-input" value="1" id="true" formControlName="Status">
+                <label for="true" class="form-check-label">True</label>
             </div>
-
+        
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="f" id="female" formControlName="Gender">
-                <label for="female" class="form-check-label">Female</label>
+                <input type="radio" class="form-check-input" value="0" id="false" formControlName="Status">
+                <label for="false" class="form-check-label">False</label>
             </div>
-
-            <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="o" id="others" formControlName="Gender">
-                <label for="others" class="form-check-label">Others</label>
-            </div>
-        </div>
-<<<<<<< HEAD
-    <div class="col ps-3 mb-3">
-=======
-    </div>
-
-    <div class="col ps-2 mb-2">
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
-
-        <div class="form-check form-check-inline"><b>(Status)</b></div>
-
-        <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" value="0" id="true" formControlName="Status">
-            <label for="true" class="form-check-label">True</label>
+        
         </div>
     
-        <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" value="1" id="false" formControlName="Status">
-            <label for="false" class="form-check-label">False</label>
-        </div>
-    
-    </div>
-
-<<<<<<< HEAD
-=======
-    <div class="row">
-        <div class="form-check form-check-inline col mb-2">
-            <form class="row row-cols-sm-auto">
-                <div class="col-12">
-                    <div class="input-group">
-                        <input
-                            class="form-control"
-                            placeholder="D.O.B"
-                            name="dp"
-                            [(ngModel)]="Model"
-                            ngbDatepicker
-                            #d="ngbDatepicker"
-                        />
-                        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><mat-icon>today</mat-icon></button>
+        <div class="row">
+            <div class="form-check form-check-inline col mb-2">
+                <form class="row row-cols-sm-auto">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input
+                                class="form-control"
+                                placeholder="D.O.B"
+                                name="dp"
+                                [(ngModel)]="Model"
+                                ngbDatepicker
+                                #d="ngbDatepicker"
+                            />
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><mat-icon>today</mat-icon></button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        <div class="form-check form-check-inline col mb-2">
-            <form class="row row-cols-sm-auto">
-                <div class="col-12">
-                    <div class="input-group">
-                        <input
-                            class="form-control"
-                            placeholder="D.O.J"
-                            name="dp"
-                            [(ngModel)]="Model"
-                            ngbDatepicker
-                            #d="ngbDatepicker"
-                        />
-                        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><mat-icon>today</mat-icon></button>
+                </form>
+            </div>
+            <div class="form-check form-check-inline col mb-2">
+                <form class="row row-cols-sm-auto">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input
+                                class="form-control"
+                                placeholder="D.O.J"
+                                name="dp"
+                                [(ngModel)]="Model"
+                                ngbDatepicker
+                                #d="ngbDatepicker"
+                            />
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><mat-icon>today</mat-icon></button>
+                        </div>
                     </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-3 offset-0">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-outline-dark" *ngIf="!getparamid" (click)="registerSubmited()">Submit</button>
                 </div>
-            </form>
-        </div>
-    </div>
+            </div>
     
->>>>>>> 3a183b8e2684196ac4806e91f573b7dda6c18e7d
-    <div class="row">
-        <div class="col-3 offset-0">
-            <div class="d-grid">
-                <button type="submit" class="btn btn-outline-dark" *ngIf="!getparamid" (click)="registerSubmited()">Submit</button>
+            <div class="col-3 offset-0">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-outline-success" *ngIf="getparamid" (click)=" registerUpdated()">Update</button>
+                </div>
+            </div>
+    
+            <div class="col-6 offset-0">
+                <div class="d-grid">
+                    <button type="button" class="btn btn-outline-info" *ngIf="!getparamid" routerLink="../getemployee">Get Employee</button>
+                </div>
             </div>
         </div>
-
-        <div class="col-3 offset-0">
-            <div class="d-grid">
-                <button type="submit" class="btn btn-outline-success" *ngIf="getparamid" (click)=" registerUpdated()">Update</button>
-            </div>
-        </div>
-
-        <div class="col-6 offset-0">
-            <div class="d-grid">
-                <button type="button" class="btn btn-outline-info" *ngIf="!getparamid" routerLink="../getemployee">Get Employee</button>
-            </div>
-        </div>
+    </form>
     </div>
-</form>
-</div>

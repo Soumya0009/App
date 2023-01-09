@@ -17,7 +17,6 @@ const db = mysql.createConnection({
     port:3335
 });
 
-
 // Check database connection
 db.connect(err => {
     if (err){console.log('err')}
@@ -26,7 +25,7 @@ db.connect(err => {
 
 // Show/get all data of employee
 app.get('/add_employee',(req,res)=>{
-    // console.log("Get all elements");
+    // console.log("Get all elements");  
     let qrr = `SELECT * FROM add_employee`;
     db.query(qrr,(err,results)=>{
         if(err){
@@ -35,22 +34,6 @@ app.get('/add_employee',(req,res)=>{
         if(results.length>0){
             res.send({
                 message: 'All data of employees',
-                data:results
-            });
-        }
-    });
-});
-// Show/get all data of User
-app.get('/user',(req,res)=>{
-    // console.log("Get all elements");
-    let qrr = `SELECT * FROM user`;
-    db.query(qrr,(err,results)=>{
-        if(err){
-            console.log(err,"Error");
-        }
-        if(results.length>0){
-            res.send({
-                message: 'All data of User',
                 data:results
             });
         }
@@ -78,6 +61,24 @@ app.get('/add_employee/:Employee_ID',(req,res)=>{
         }
     });
 });
+
+// Show/get all data of User
+app.get('/user',(req,res)=>{
+    // console.log("Get all elements");
+    let qrr = `SELECT * FROM user`;
+    db.query(qrr,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data of User',
+                data:results
+            });
+        }
+    });
+});
+
 //Get Single Data Of User
 app.get('/user/:Id',(req,res)=>{
     // console.log("Get all elements");
@@ -158,7 +159,6 @@ app.get('/tbl_task',(req,res)=>{
     });
 });
 
-
 //show/get single data by id of task
 app.get('/tbl_task/:id',(req,res)=>{
     //console.log(req.params.id);
@@ -183,6 +183,46 @@ app.get('/tbl_task/:id',(req,res)=>{
     })
 })
 
+// Show/get all data of logincredentials
+app.get('/login_credentials',(req,res)=>{
+    // console.log("Get all elements");
+    let mmm = `SELECT * FROM login_credentials`;
+    db.query(mmm,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data ',
+                data:results
+            });
+        }
+    });
+});
+
+// Show/get single data by id of logincredentials
+app.get('/login_credentials/:ID',(req,res)=>{
+    // console.log("Get all elements");
+    let qrId = req.params.ID;
+    let qr = `SELECT * FROM login_credentials where ID = ${qrId}`;
+    db.query(qr,(err,results)=>{
+        if(err){
+            console.log(err,"Error");
+        }
+        if(results.length>0){
+            res.send({
+                message: 'All data of employees',
+                data:results
+            });
+        }else{
+            res.send({
+                message:"Data Not Found!!!"
+            });
+        }
+    });
+});
+
+
 // Create/post data of employee
 app.post('/add_employee',(req,res)=>{
     // console.log(req.body,'post data sucessfull');
@@ -192,10 +232,13 @@ app.post('/add_employee',(req,res)=>{
     let eMail = req.body.Email;
     let mobileNo = req.body.Mobile_No;
     let gender = req.body.Gender;
+    let dob = req.body.DOB;
+    let doj = req.body.DOJ;
     let salery = req.body.Salery;
+    let status = req.body.Status;
 
-    let qr = `insert into add_employee(First_Name,Middle_Name,Last_Name,Email,Mobile_No,Gender,Salery)
-    value('${firstName}','${middleName}','${lastName}','${eMail}','${mobileNo}','${gender}','${salery}')`;
+    let qr = `insert into add_employee(First_Name,Middle_Name,Last_Name,Email,Mobile_No,Gender,Salery,DOB,DOJ,Status)
+    value('${firstName}','${middleName}','${lastName}','${eMail}','${mobileNo}','${gender}','${salery}','${dob}','${doj}','${status}')`;
     db.query(qr,(err,results)=>{
         if(err){console.log(err)}
             res.send({
@@ -217,6 +260,24 @@ app.post('/user',(req,res)=>{
     let qr = `insert into user(Employee_Id,Password,Created_On,Modified_On,Status)
     value('${employeeId }','${pass}','${createdOn}','${modifiedOn}','${status}')`;
     db.query(qr,(err,results)=>{
+        if(err){console.log(err)}
+            res.send({
+                message:"Data Created Sucessfully",
+                data:results
+            });
+    });
+});
+
+// Create/post data of Login Credentials
+app.post('/login_credentials',(req,res)=>{
+    // console.log(req.body,'post data sucessfull');
+    let name= req.body.Name;
+    let password = req.body.Password;
+    let Confirmpassword = req.body.Confirm_password;
+
+    let pr = `insert into login_credentials(Name,Password,Confirm_password)
+    value('${name}','${password}','${Confirmpassword}')`;
+    db.query(pr,(err,results)=>{
         if(err){console.log(err)}
             res.send({
                 message:"Data Created Sucessfully",
@@ -282,6 +343,7 @@ app.post('/add_employee/:Employee_ID',(req,res)=>{
         });
     });
 });
+
 // Update User Data 
 app.post('/user/:Id',(req,res)=>{
     let userId = req.params.Id;
